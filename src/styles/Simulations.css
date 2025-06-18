@@ -1,0 +1,378 @@
+.simulations-content {
+  flex: 1;
+  padding: 2.5rem;
+  background: var(--background-primary);
+  overflow-y: auto;
+}
+
+.simulations-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.simulations-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.simulations-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.simulations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.simulations-grid.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.simulation-card {
+  background: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.simulation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  color: white;
+}
+
+.career-card .card-icon {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+}
+
+.financial-card .card-icon {
+  background: linear-gradient(135deg, #10B981, #047857);
+}
+
+.satisfaction-card .card-icon {
+  background: linear-gradient(135deg, #EC4899, #BE185D);
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Progress Section */
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.probability {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+.career-progress {
+  background: linear-gradient(90deg, #3B82F6, #1D4ED8);
+}
+
+/* Projection Details */
+.projection-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.detail-item .value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.detail-item .value.highlight {
+  color: var(--success-color);
+}
+
+/* Financial Chart */
+.financial-chart {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.chart-bars {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  height: 150px;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bar-fill {
+  width: 40px;
+  background: linear-gradient(180deg, #10B981, #047857);
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease-out;
+  animation-delay: 0.5s;
+}
+
+.bar-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Satisfaction Meter */
+.satisfaction-meter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.meter-current,
+.meter-projected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meter-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.meter-circle.projected {
+  border-color: var(--success-color);
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.meter-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.meter-max {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.meter-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.meter-arrow {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Satisfaction Factors */
+.satisfaction-factors h4 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.satisfaction-factors ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.satisfaction-factors li {
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.satisfaction-factors li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Simulation Actions */
+.simulation-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.action-button.secondary {
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.action-button.primary:hover {
+  filter: brightness(1.1);
+}
+
+.action-button.secondary:hover {
+  border-color: var(--primary-color);
+  background: rgba(102, 126, 234, 0.1);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .simulations-content {
+    padding: 1.5rem;
+  }
+
+  .simulations-header h1 {
+    font-size: 2rem;
+  }
+
+  .simulations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .simulation-card {
+    padding: 1.5rem;
+  }
+
+  .chart-bars {
+    gap: 1rem;
+  }
+
+  .satisfaction-meter {
+    gap: 1rem;
+  }
+
+  .meter-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .meter-value {
+    font-size: 1.25rem;
+  }
+
+  .simulation-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

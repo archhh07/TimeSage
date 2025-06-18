@@ -1,0 +1,322 @@
+.decision-jenga-content {
+  flex: 1;
+  padding: 2.5rem;
+  background: var(--background-primary);
+  overflow-y: auto;
+}
+
+.decision-jenga-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.decision-jenga-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.decision-jenga-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.day-counter {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.decisions-container {
+  margin-bottom: 3rem;
+}
+
+.decisions-container h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.decision-card {
+  background: var(--background-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.decision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-color);
+}
+
+.decision-card.selected {
+  border-color: var(--success-color);
+  background: rgba(16, 185, 129, 0.05);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+}
+
+.decision-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.decision-header p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.effects-container h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.effects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.effect-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.effect-chip.positive {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.effect-chip.negative {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.effect-chip.neutral {
+  background: rgba(107, 114, 128, 0.2);
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
+}
+
+.effect-label {
+  font-size: 0.85rem;
+}
+
+.effect-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.decision-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(16, 185, 129, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.decision-card.selected .decision-overlay {
+  opacity: 1;
+}
+
+.checkmark {
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  animation: checkmarkPop 0.5s ease-out;
+}
+
+@keyframes checkmarkPop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Cumulative Effects */
+.cumulative-effects {
+  background: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.cumulative-effects h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.impact-summary {
+  display: flex;
+  justify-content: center;
+}
+
+.selected-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.summary-effect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.summary-effect .positive {
+  color: var(--success-color);
+}
+
+.summary-effect .negative {
+  color: var(--error-color);
+}
+
+.summary-effect .neutral {
+  color: var(--text-secondary);
+}
+
+.no-selection {
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* Game Actions */
+.game-actions {
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.next-day-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, var(--warning-color), #d97706);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.next-day-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+  filter: brightness(1.1);
+}
+
+.next-day-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .decision-jenga-content {
+    padding: 1.5rem;
+  }
+
+  .decision-jenga-header h1 {
+    font-size: 2rem;
+  }
+
+  .decisions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .decision-card {
+    padding: 1.5rem;
+  }
+
+  .effects-list {
+    gap: 0.5rem;
+  }
+
+  .effect-chip {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .selected-effects {
+    gap: 0.75rem;
+  }
+
+  .summary-effect {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cumulative-effects {
+    padding: 1.5rem;
+  }
+
+  .next-day-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
